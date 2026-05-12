@@ -119,10 +119,13 @@ function showNotification(title, text, styleClasses) {
 function updateStatus(isPolling) {
     const badge = document.getElementById('status-badge');
     if (isPolling) {
-        badge.innerText = "Sondeando DB...";
-        badge.className = "text-xs bg-yellow-900/30 border border-yellow-500 text-yellow-400 px-3 py-1 rounded-full transition-all";
+        // Texto que da seguridad al usuario
+        badge.innerText = "En Línea";
+        // Cambiamos de amarillo a esmeralda/verde para indicar éxito
+        badge.className = "text-xs bg-emerald-900/30 border border-emerald-500 text-emerald-400 px-3 py-1 rounded-full transition-all";
     } else {
-        badge.innerText = "Error de Red";
+        // Mensaje claro de caída
+        badge.innerText = "Reintentando conexión...";
         badge.className = "text-xs bg-red-900/30 border border-red-500 text-red-400 px-3 py-1 rounded-full transition-all";
     }
 }
